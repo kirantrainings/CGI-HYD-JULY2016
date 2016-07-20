@@ -1,17 +1,21 @@
-<html>
+<html ng-app="bestBuy">
 
 <head>
     <link rel="stylesheet" href="content/css/bootstrap.css">
     <link rel="stylesheet" href="content/css/bootstrap-theme.css">
     <script src="vendor/jquery-2.2.0.js"></script>
-         <script src="vendor/bootstrap.js"></script>
-          <script src="vendor/angular.min.js"></script>
-
+    <script src="vendor/bootstrap.js"></script>
+    <script src="vendor/angular.min.js"></script>
 </head>
 
 <body>
-    <h1>Welcome to Angularjs</h1>
-    <script src="script.js"></script>
+    <div class="content">
+        <div ng-include="'app/register/register.html'" </div>
+
+
+            <script src="app/register/register.js"></script>
+            <script src="app/register/registerCtrl.js"></script>
+            <script src="app/app.js"></script>
 </body>
 
 </html>
