@@ -9,13 +9,16 @@
 </head>
 
 <body>
-    <div class="content">
-        <div ng-include="'app/register/register.html'" </div>
+    <div class="container">
+        <div ng-include="'app/common/header.html'"></div>
+        <div ng-include="'app/register/register.html'"></div>
+        <div ng-include="'app/common/footer.html'"></div>
+    </div>
 
 
-            <script src="app/register/register.js"></script>
-            <script src="app/register/registerCtrl.js"></script>
-            <script src="app/app.js"></script>
+    <script src="app/register/register.js"></script>
+    <script src="app/register/registerCtrl.js"></script>
+    <script src="app/app.js"></script>
 </body>
 
 </html>

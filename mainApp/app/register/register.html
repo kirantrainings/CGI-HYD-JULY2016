@@ -29,9 +29,13 @@
     <div class="form-group">
         <label for="inputEmail" class="control-label col-xs-2">Country</label>
         <div class="col-xs-4">
-            <select class="form-control">
-                <option value="">Please Select</option>
+
+            <select class="form-control" ng-model="vm.selectedCountry" ng-options="item.name+','+item.code for item in vm.countries">
+                <option value="">Please select</option>
+
             </select>
+
+
         </div>
     </div>
 
@@ -46,9 +50,7 @@
 
     <div class="form-group">
         <div class="col-xs-offset-2 col-xs-4">
-            <button class="btn btn-primary" ng-click="vm.registerUser()">Register</button>
+            <button ng-disabled="!vm.user.terms" class="btn btn-primary" ng-click="vm.registerUser()">Register</button>
         </div>
     </div>
-
-    <pre>{{vm.user|json}}</pre>
 </form>
