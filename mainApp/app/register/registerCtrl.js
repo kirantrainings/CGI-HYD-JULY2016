@@ -1,14 +1,7 @@
 angular.module("register")
-    .controller("registerCtrl", function () {
+    .controller("registerCtrl", function (lookupSvc) {
         this.user = {};
-        this.countries = [{
-                name: "India",
-                code: "IN"
-            },
-            {
-                name: "Canada",
-                code: "CA"
-            }];
+        this.countries = lookupSvc.countries;
         this.registerUser = function () {
             //send data to the api.
             console.log(this.user);

@@ -9,17 +9,23 @@
 </head>
 
 <body>
-    <div class="container">
-        <div ng-include="'app/common/header.html'"></div>
-        <div ng-include="'app/register/register.html'"></div>
-        <div ng-include="'app/common/footer.html'"></div>
+    <div class="container" ng-controller="mainCtrl as mc">
+        <div ng-include="mc.headerUrl"></div>
+        <div ng-include="mc.contentUrl"></div>
+        <div ng-include="mc.footerUrl"></div>
     </div>
 
 
     <script src="app/register/register.js"></script>
+
     <script src="app/register/registerCtrl.js"></script>
     <script src="app/app.js"></script>
-    <script src="app/common/mainCtrl.js"></script>
+    <script src="app/common/lookupSvc.js"></script>
+    <script src="app/common/mainCtrl.js">
+
+
+    </script>
+
 </body>
 
 </html>
