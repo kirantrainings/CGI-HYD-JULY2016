@@ -1,3 +1,3 @@
 //Creating the module
 
-angular.module("bestBuy", ["register", "products"]);
+angular.module("bestBuy", ["register", "products", "users"]);
