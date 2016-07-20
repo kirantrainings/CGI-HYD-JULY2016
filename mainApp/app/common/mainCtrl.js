@@ -11,6 +11,8 @@ angular.module("bestBuy")
                 this.contentUrl = "app/login/login.html";
             } else if (contentType == "home") {
                 this.contentUrl = "app/home/home.html";
+            } else if (contentType == "products") {
+                this.contentUrl = "app/products/products.html";
             } else {
                 this.contentUrl = "app/register/register.html";
             }
