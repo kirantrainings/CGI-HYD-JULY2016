@@ -1,9 +1,9 @@
 angular.module("bestBuy")
-    .controller("mainCtrl", function () {
+    .controller("mainCtrl", function ($scope) {
         this.headerUrl = "app/common/header.html";
         this.footerUrl = "app/common/footer.html";
         this.contentUrl = "";
-
+        $scope.companyname="CGI";
         this.loadContent = function (contentType) {
             if (contentType == 'register') {
                 this.contentUrl = "app/register/register.html";

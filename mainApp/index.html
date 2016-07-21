@@ -10,7 +10,9 @@
 
 <body>
     <div class="container" ng-controller="mainCtrl as mc">
-        <div ng-include="mc.headerUrl"></div>
+        <custom-header></custom-header>
+        <div custom-header></div>
+        <div class="custom-header"></div>
         <div ng-include="mc.contentUrl"></div>
         <div ng-include="mc.footerUrl"></div>
     </div>
@@ -20,6 +22,8 @@
 
     <script src="app/register/registerCtrl.js"></script>
     <script src="app/users/users.js"></script>
+
+    <script src="app/components/components.js"></script>
 
     <script src="app/app.js"></script>
     <script src="app/common/lookupSvc.js"></script>
