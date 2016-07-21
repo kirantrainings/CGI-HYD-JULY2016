@@ -1,4 +1,20 @@
 <div ng-controller="userCtrl as uc">
     <h1>Users</h1>
-    <pre>{{users|json}}</pre>
+    <input type="text" ng-model="userSearch">
+    <button ng-click="showMore()">Show More</button>
+    <table class="table table-hover">
+        <tr>
+            <th>Name</th>
+            <th>Gender</th>
+            <th>Company</ th>
+        </tr>
+        <tr ng-repeat="user in users
+          |filter:userSearch
+           |limitTo:count">
+            <td>{{user.name}}</td>
+            <td>{{user.gender}}</td>
+            <td>{{user.company}}</td>
+        </tr>
+
+    </table>
 </div>

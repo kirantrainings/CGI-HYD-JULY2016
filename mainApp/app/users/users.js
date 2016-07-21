@@ -5,7 +5,10 @@ angular.module("users", [])
         };
     })
     .controller("userCtrl", function (userSvc, $scope) {
-
+        $scope.count=2;
+        $scope.showMore = function(){
+          $scope.count+=2;  
+        };
         userSvc.getUsers()
             .then(function (response) {
                 $scope.users = response.data;
