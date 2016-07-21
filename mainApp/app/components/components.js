@@ -35,3 +35,36 @@ angular.module("components")
             }
         }
     });
+
+
+angular.module("components")
+    .directive("customClick", function () {
+        return {
+            restrict: "A",
+            link: function (scope, element, attrs) {
+                function handleClick() {
+                    scope.$eval(attrs["customClick"]);
+                }
+                element.bind("click", handleClick);
+            }
+        }
+    });
+
+angular.module("components")
+    .directive("easyDatePicker", function () {
+        return {
+            restirct: "A",
+            link: function (scope, element, attrs) {
+                //custom-min-date
+                //custom-max-date
+                var config = {};
+                if (attrs["min"]) {
+                    config.minDate = attrs["min"];
+                }
+                if (attrs["max"]) {
+                    config.maxDate = attrs["max"];
+                }
+                element.datepicker(config);
+            }
+        }
+    });

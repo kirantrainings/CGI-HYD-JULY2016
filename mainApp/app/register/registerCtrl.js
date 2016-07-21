@@ -11,7 +11,7 @@ angular.module("register")
             });
 
 
-        this.registerUser = function () {
+        $scope.registerUser = function () {
             //send data to the api.
             console.log(this.user);
         };
