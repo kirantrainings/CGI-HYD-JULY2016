@@ -74,7 +74,8 @@ angular.module("products")
         };
 
         var productsForCheckout = [];
-        this.addProductForCheckout = function (item) {
+        
+    this.addProductForCheckout = function (item) {
             productsForCheckout.push(item);
         };
         this.getProductsForCheckout = function () {

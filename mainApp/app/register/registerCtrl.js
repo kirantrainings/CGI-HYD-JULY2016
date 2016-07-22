@@ -15,4 +15,16 @@ angular.module("register")
             //send data to the api.
             console.log(this.user);
         };
+        $scope.username = "kiran";
+
+        setTimeout(function () {
+            $scope.username = "PVS";
+            $scope.$apply();
+        }, 5000);
+
+
+        $scope.$watch("username", function (newVal, oldVal) {
+            console.log("NewValue is:" + newVal);
+            console.log("OldValue is:" + oldVal)
+        })
     });
