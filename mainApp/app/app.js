@@ -3,15 +3,17 @@
 angular.module("bestBuy", ["register", "products", "users", "components", "ui.router"]);
 
 angular.module("bestBuy")
-    .config(function ($stateProvider) {
+    .config(function ($stateProvider, $urlRouterProvider) {
         //state defnition
         var register = {
             templateUrl: "app/register/register.html",
-            controller: "registerCtrl"
+            controller: "registerCtrl",
+            url: "register"
         };
         var products = {
             templateUrl: "app/products/products.html",
             controller: "productCtrl",
+            url: "products",
             resolve: {
                 products: function (productSvc) {
                     return productSvc.getProducts();
