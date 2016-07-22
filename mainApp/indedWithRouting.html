@@ -1,0 +1,38 @@
+<html ng-app="bestBuy">
+
+<head>
+    <link rel="stylesheet" href="content/css/bootstrap.css">
+    <link rel="stylesheet" href="content/css/bootstrap-theme.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css">
+    <script src="vendor/jquery-2.2.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+    <script src="vendor/bootstrap.js"></script>
+    <script src="vendor/angular.min.js"></script>
+    <script src="vendor/angular-ui-router.js"></script>
+</head>
+
+<body>
+    <div class="container" ng-controller="mainCtrl as mc">
+
+        <div ng-include="mc.contentUrl"></div>
+        <div ng-include="mc.footerUrl"></div>
+    </div>
+
+    <script src="app/products/products.js"></script>
+    <script src="app/register/register.js"></script>
+
+    <script src="app/register/registerCtrl.js"></script>
+    <script src="app/users/users.js"></script>
+
+    <script src="app/components/components.js"></script>
+
+    <script src="app/app.js"></script>
+    <script src="app/common/lookupSvc.js"></script>
+    <script src="app/common/mainCtrl.js">
+
+
+    </script>
+
+</body>
+
+</html>
