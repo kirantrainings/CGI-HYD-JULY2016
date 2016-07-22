@@ -13,8 +13,8 @@
 
 <body>
     <div class="container" ng-controller="mainCtrl as mc">
-
-        <div ng-include="mc.contentUrl"></div>
+        <div ng-include="mc.headerUrl"></div>
+        <div ui-view></div>
         <div ng-include="mc.footerUrl"></div>
     </div>
 

@@ -74,8 +74,8 @@ angular.module("products")
         };
 
         var productsForCheckout = [];
-        
-    this.addProductForCheckout = function (item) {
+
+        this.addProductForCheckout = function (item) {
             productsForCheckout.push(item);
         };
         this.getProductsForCheckout = function () {
@@ -85,25 +85,34 @@ angular.module("products")
 
 
 angular.module("products")
-    .controller("productCtrl", function (productSvc, $scope, $rootScope) {
-        productSvc.getProducts()
-            .then(function (response) {
-                $scope.products = response;
-            })
-            .catch(function (response, error) {
-                console.log(response);
-            });
-
+    .controller("productCtrl", function (productSvc, $scope, $rootScope, products, $state) {
+        /*setTimeout(function () {
+            productSvc.getProducts()
+                .then(function (response) {
+                    $scope.products = response;
+                })
+                .catch(function (response, error) {
+                    console.log(response);
+                });
+            $scope.$apply();
+        }, 5000);*/
+        $scope.products = products;
         $scope.addToCart = function (item) {
             $rootScope.$broadcast("PRODUCT-ADDED", {
                 data: item
             });
             productSvc.addProductForCheckout(item);
         };
+        $scope.checkout = function () {
+            $state.go("cart", {
+                data: $scope.products
+            });
+        };
     });
 
 
 angular.module("products")
-    .controller("cartCtrl", function (productSvc, $scope) {
+    .controller("cartCtrl", function (productSvc, $scope, $state) {
+        console.log($state);
         $scope.productsForCheckout = productSvc.getProductsForCheckout();
     })
